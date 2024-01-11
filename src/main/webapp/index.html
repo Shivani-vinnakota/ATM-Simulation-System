@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+             background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Style for the big title */
+        .big-title {
+            font-size: 36px;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Style for the image link */
+        a {
+            text-decoration: none;
+            position: relative;
+        }
+
+        /* Style for the container holding the image and caption */
+        .button-container {
+            position: relative;
+            text-align: center;
+        }
+
+        /* Style for the image */
+        img {
+            width: 300px; /* Adjust the image width as needed */
+            height: auto;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block; /* Remove any residual spacing */
+            border: 5px solid #0074d9; /* Add a border around the image */
+            border-radius: 10px; /* Rounded corners for the border */
+        }
+
+        /* Style for the hover effect */
+        a:hover img {
+            transform: scale(1.1);
+            border-color: #45a049; /* Change border color on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow on hover */
+        }
+
+        /* Caption style */
+        .caption {
+            font-size: 24px; /* Adjusted font size */
+            color: #333; /* Dark text color */
+            background-color: rgba(0, 116, 217, 0.7); /* Semi-transparent blue background */
+            padding: 10px 20px; /* Padding for the caption */
+            border-radius: 5px; /* Rounded corners for the caption background */
+            margin-top: 10px; /* Margin to position the caption below the image */
+        }
+    </style>
+</head>
+
+<body background="https://image.slidesdocs.com/responsive-images/slides/0-blue-corporate-promotion-planning-bank-powerpoint-background_2546aea89c__960_540.jpg">
+  	
+    <div class="big-title">Welcome to Centum ATM!!!</div>
+    <a href="login.html">
+        <div class="button-container">
+            <img src="https://i.pinimg.com/originals/8d/68/85/8d6885d4f503884e856ddbeb9a823437.gif" alt="Click me to redirect"> <!-- Replace with your image URL -->
+            <div class="caption">Please enter</div> <!-- Updated caption -->
+        </div>
+    </a>
+</body>
+</html

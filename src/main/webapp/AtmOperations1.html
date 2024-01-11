@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Transactions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #ffffff; /* Container background color */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for container */
+            text-align: center;
+        }
+        h2 {
+            font-size: 28px;
+            color: #0074d9; /* Heading color */
+        }
+        label {
+            display: block;
+            margin-top: 15px;
+            font-size: 18px;
+            color: #333; /* Label text color */
+        }
+        /* Custom button styles with animations */
+        .custom-button {
+            display: inline-block;
+            width: 45%; /* Fixed width for all buttons */
+            height: 50px; /* Fixed height for all buttons */
+            background-color: #4CAF50; /* Parrot green button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 5px;
+        }
+        .custom-button:hover {
+            background-color: #45a049; /* Hover background color */
+            transform: scale(1.05); /* Hover animation: slightly scale up */
+        }
+        .custom-button:active {
+            transform: scale(0.95); /* Click animation: slightly scale down */
+        }
+        /* Bank logo style */
+        .bank-logo {
+            width: 100px; /* Adjust logo width as needed */
+            height: auto;
+            margin-bottom: 20px;
+        }
+        /* Button container for grid layout */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+	<body background="https://image.slidesdocs.com/responsive-images/slides/0-blue-corporate-promotion-planning-bank-powerpoint-background_2546aea89c__960_540.jpg">
+  
+    <div class="container">       
+        <h2>Please Select the Transaction Type</h2>
+        <!-- Button container for grid layout -->
+        <div class="button-container">
+            <!-- Customized buttons -->
+            <button class="custom-button" type="button" onclick="handleTransactionSelection('deposit')">Deposit</button>
+            <button class="custom-button" type="button" onclick="handleTransactionSelection('checkBalance')">Check Balance</button>
+            <button class="custom-button" type="button" onclick="handleTransactionSelection('miniStatement')">Mini Statement</button>
+            <button class="custom-button" type="button" onclick="handleTransactionSelection('withdraw')">Withdraw</button>
+            <button class="custom-button" type="button" onclick="handleTransactionSelection('changepin')">Change Pin</button>
+            <button class="custom-button" type="button" onclick="handleTransactionSelection('logout')">Log Out</button>
+      
+        </div>
+    </div>
+
+    <script>
+        function handleTransactionSelection(transactionType) {
+            if (transactionType === "deposit") {              
+              window.location.href = 'deposit_1.html';
+            } else if (transactionType === "checkBalance") {            
+               window.location.href = 'checkbalance';             
+            } else if (transactionType === "miniStatement") {             
+                window.location.href = 'ministatement';
+            } else if (transactionType === "withdraw") {
+				 window.location.href = 'withdraw.html';                
+            }else if (transactionType === "changepin") {
+				 window.location.href = 'changepin.html';
+                
+            }else if (transactionType === "logout") {
+				 window.location.href = 'index.html';
+                
+            }
+        }
+      
+    // Function to get the value of a query parameter from the URL
+    function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+  }
+    </script>
+</body>
+</html>

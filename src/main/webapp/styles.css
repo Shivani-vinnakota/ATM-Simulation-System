@@ -1,0 +1,75 @@
+ @charset "ISO-8859-1";
+table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+/* Style table caption */
+caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style table header cells */
+th {
+    background-color:rgb(48, 154, 72);
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style table data cells */
+td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+
+/* Style table rows alternatively for better readability */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the "Back" link */
+a {
+    text-decoration: none;
+    color:rgb(48, 154, 72);
+	padding: 10px 50px;
+    background-color: rgb(48, 154, 72);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+	}
+	.a:hover {
+     background-color: rgb(48, 154, 72);
+     }
+     
+     
+     
+     /* styles.css */
+.form-container {
+   margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+select {
+    width: 100px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    padding: 5px 10px;
+    background-color: rgb(48, 154, 72);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}

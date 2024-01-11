@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; 
+            background-size: cover; /* Scale the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Keep the background fixed while scrolling */
+            background-position: center; /* Center the background image */
+            background-size: 100% 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .login-container {
+             background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .btn-deposit {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .btn-deposit:hover {
+            background-color: #0056b3;
+        }
+    </style>
+     <script>
+        function validateAmount() {
+            var amountInput = document.getElementById("numericInput");
+            var amount = parseInt(amountInput.value);
+            
+             // Additional validation for negative numbers
+        if (parseInt(amount) < 0 ) {
+          alert("Money should not be less than zero.");
+          return false;
+       }
+
+            // Check if the amount is a multiple of 100 or 500
+            if (amount % 100 === 0 || amount % 500 === 0) {
+                return true; // Allow the form to submit
+            } else {
+                alert("Amount must be a multiple of 100 or 500.");
+                return false; // Prevent the form from submitting
+            }
+        }
+
+        // Add an event listener to the form for the submit event
+        document.addEventListener("DOMContentLoaded", function () {
+            var form = document.querySelector("form");
+            form.addEventListener("submit", function (event) {
+                if (!validateAmount()) {
+                    event.preventDefault(); // Prevent the form from submitting
+                }
+            });
+        });
+    </script>
+</head>
+<body background="https://image.slidesdocs.com/responsive-images/slides/0-blue-corporate-promotion-planning-bank-powerpoint-background_2546aea89c__960_540.jpg">  
+    <div class="login-container">
+		<form action="deposit" target="_blank" method="post">
+        <fieldset>
+			 <form action="deposit" target="_blank" method="post">
+            <h2>Deposit</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2tU4MDzmlgnC2DK6Jocon5_kXYNMNZ42aPUnCvsx_OtKK2FMW9yKT-o5NAT9WNncwC5U&usqp=CAU" alt="money" width="100px" height="80px">
+                <div class="form-group">
+                    <label for="amount"> Amount to Deposit:</label>
+                    <input type="text" id="numericInput" name="amount" placeholder="Eg:100" minlength="3" maxlength="5" >
+                </div>
+                <button type="submit" class="btn-deposit">Deposit</button>
+                 </fieldset>
+            </form>      
+    </div>
+</body>
+</html>
+
+
+
+

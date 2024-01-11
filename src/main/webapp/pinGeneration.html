@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pin Generation Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; 
+            background-size: cover; /* Scale the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Keep the background fixed while scrolling */
+            background-position: center; /* Center the background image */
+            background-size: 100% 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .signup-container {
+           background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;	    
+            margin: 100px auto;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .signup-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+             display: inline-block;
+             width: 48%; /* Adjust the width as needed */
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .btn-signup {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .btn-signup:hover {
+            background-color: #0056b3;
+        }
+    </style>    
+    <script>
+        function validateForm() {
+            var accountNo = document.getElementsByName("accountno")[0].value;
+            var cardNo = document.getElementsByName("cardNo")[0].value;
+            var cvvNo = document.getElementsByName("cvvNo")[0].value;
+            var pinNo = document.getElementsByName("pinNo")[0].value;
+            var cpin = document.getElementsByName("cpin")[0].value;
+            
+             // Additional validation for negative numbers
+             if (parseFloat(accountNo) < 0 || parseFloat(cardNo) < 0) {
+                alert("Account Number & Card Number cannot be Negative.");
+                return false;
+             }
+             if ( accountNo.startsWith("0") || cardNo.startsWith("0")) {
+              alert(" Account Number/Card Number cannot start with zero.");
+                return false;
+               }
+             
+            // Add your validation logic here for each input field
+            // For example:
+            if (accountNo.length !== 15 || isNaN(accountNo)) {
+                alert("Invalid Account Number. Please enter a 15-digit numeric value.");
+                return false;
+            }
+
+            if (cardNo.length !== 16 || isNaN(cardNo)) {
+                alert("Invalid Card Number. Please enter a 16-digit numeric value.");
+                return false;
+            }
+
+            if (cvvNo.length !== 3 || isNaN(cvvNo)) {
+                alert("Invalid CVV. Please enter a 3-digit numeric value.");
+                return false;
+            }
+
+            if (pinNo.length !== 4 || isNaN(pinNo)) {
+                alert("Invalid PIN. Please enter a 4-digit numeric value.");
+                return false;
+            }
+
+            if (cpin !== pinNo) {
+                alert("PIN and Confirm PIN do not match. Please re-enter.");
+                return false;
+            }
+
+            return true; // Form submission will proceed if all validations pass
+        }
+        
+        window.onload = function() {
+            var currentDate = new Date();
+            var year = currentDate.getFullYear();
+            var month = currentDate.getMonth() + 1; // JavaScript months are 0-based
+
+            // Format the current date as "YYYY-MM" to set as the min attribute
+            var minDate = year + '-' + (month < 10 ? '0' : '') + month;
+
+            // Set the min attribute of the expiryDate input
+            document.getElementsByName("expiryDate")[0].setAttribute("min", minDate);
+        }
+    </script>
+</head>
+<body background="https://image.slidesdocs.com/responsive-images/slides/0-blue-corporate-promotion-planning-bank-powerpoint-background_2546aea89c__960_540.jpg">    
+    <div class="signup-container">
+          <fieldset>
+        <h2>Pin Generation</h2>
+        <form action="pingeneration" target="_blank" method="post" onsubmit="return validateForm()">
+           <img src="data:image/png;base64,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" alt="pin" width="100" height="100">
+            <br>
+            <div class="form-group">
+                <label for="accno"> Account Number:</label>
+                <input type="text" id="numericInput" name="accountno" minlength="15" maxlength="15" placeholder="Eg:3xxxxxxxxxxx342">
+            </div>          
+            <div class="form-group">
+                <label for="cardNo"> Card Number:</label>
+                <input type="text" id="numericInput1" name="cardNo" placeholder="Eg:6xxx3xxx0xxx7xxx" maxlength="16">
+            </div>
+            <div class="form-group">
+                <label for="expiryDate">Enter the ExpiryDate:</label>
+                 <input type="month" id="selectMonth" name="expiryDate" placeholder="Eg:05/2023" name="month" > 
+            </div>
+            <div class="form-group">
+                <label for="cvvNo">Enter the Cvv:</label>
+                <input type="text" id="numericInput" name="cvvNo" placeholder="Eg:5x7" minlength="3" maxlength="3" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            </div>
+            <div class="form-group">
+                <label for="pinNo"> Enter the pin :</label>
+                <input type="password" id="numericInput" name="pinNo" placeholder="Eg:567X" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            </div>
+             <div class="form-group">
+                <label for="cpin"> confirm the pin :</label>
+                <input type="password" id="numericInput" name="cpin" placeholder="Eg:567X" maxlength="4" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+            </div>
+            <button type="submit" class="btn-signup">Generate</button>
+        </form>
+     </fieldset>
+    </div>
+</body>
+</html>

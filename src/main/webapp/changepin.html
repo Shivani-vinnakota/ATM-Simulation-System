@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChangePin Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif; 
+            background-size: cover; /* Scale the image to cover the entire background */
+            background-repeat: no-repeat; /* Prevent image repetition */
+            background-attachment: fixed; /* Keep the background fixed while scrolling */
+            background-position: center; /* Center the background image */
+            background-size: 100% 100%;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .signup-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .signup-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 80%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .btn-signup {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .btn-signup:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function validateForm() {
+            var currentPin = document.getElementById("currentPin").value;
+            var newPin = document.getElementById("newPin").value;
+            var confirmPin = document.getElementById("confirmPin").value;
+
+       // Additional validation for negative numbers
+        if (parseInt(currentPin) < 0 || parseInt(newPin) < 0 || parseInt(confirmPin) < 0) {
+          alert("PIN should not be negative.");
+          return false;
+       }
+          if (currentPin === "") {
+                alert("Please enter the current pin.");
+                return false;
+            }
+
+            if (newPin === "") {
+                alert("Please enter the new pin.");
+                return false;
+            }
+
+            if (confirmPin === "") {
+                alert("Please confirm the new pin.");
+                return false;
+            }
+           if (newPin !== confirmPin) {
+                alert("New pin and confirm pin do not match.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body background="https://image.slidesdocs.com/responsive-images/slides/0-blue-corporate-promotion-planning-bank-powerpoint-background_2546aea89c__960_540.jpg">  
+    <div class="signup-container">
+          <fieldset>
+        <h2>Change Pin</h2>
+        <form action="changepin"  method="post" onsubmit="return validateForm();">
+           <img src="https://media.istockphoto.com/id/697894928/vector/hand-finger-entering-pin-code-solid-icon-unlock-and-password-vector-graphics-a-glyph-pattern.jpg?s=170667a&w=0&k=20&c=Y2n7O9W68UW-UiOPIWG4xyB_t-e0K7YZQjLT4gu5O-g=" alt="pin" width="100" height="100">
+            <div class="form-group">
+                <label for="cPinNo"> Enter the Current pin :</label>
+                <input type="text" id="currentPin" name="cPinNo" placeholder="Eg:567X" maxlength="4">
+            </div>           
+            <div class="form-group">
+                <label for="pinNo"> Enter the new pin :</label>
+                <input type="text" id="newPin" name="pinNo" placeholder="Eg:567X" maxlength="4" >
+            </div>
+             <div class="form-group">
+                <label for="cpin"> confirm new pin :</label>
+                <input type="text" id="confirmPin" name="cpin" placeholder="Eg:567X" maxlength="4">
+            </div>
+            <button type="submit" class="btn-signup">Submit</button>
+        </form>
+     </fieldset>
+    </div>
+</body>
+</html>

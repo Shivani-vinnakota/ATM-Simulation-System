@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://image.slidesdocs.com/responsive-images/slides/0-blue-corporate-promotion-planning-bank-powerpoint-background_2546aea89c__960_540.jpg'); /* Replace with your background image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            animation: bounce 1.5s ease infinite alternate;
+        }
+       
+        h3 {
+            font-size: 30px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+     
+        }
+
+        p {
+            font-size: 24px;
+            color: #fff; /* Change text color to white */
+            text-align: center;
+            max-width: 400px;
+            margin-bottom: 10px;
+        }
+
+        .glowing-checkmark {
+            font-size: 48px;
+            color: #4CAF50;
+            animation: glow 1s ease infinite alternate;
+        }
+
+        .stars {
+            display: flex;
+            align-items: center;
+        }
+
+        .star {
+            font-size: 30px;
+            color: #ffc107;
+            animation: blink 1s infinite;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        @keyframes glow {
+            0% { opacity: 0.6; text-shadow: none; }
+            100% { opacity: 1; text-shadow: 0 0 10px #4CAF50; }
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+  
+       .btn-login {
+            background-color: #4AAF50;
+            color: #fff;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 15px;
+            font-weight: bold;
+        }
+       btn-login:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Thank You!</h1>
+   <form action="AtmOperations1.html" method="post" id="SuccessMessage">
+   <div id="successMessage"></div>
+ <script>
+   function rate(stars) {
+            alert('You rated us ' + stars + ' stars! Thank you for your feedback.');
+        }
+       // Function to display the success message
+    function displaySuccessMessage(messageFromServer) {
+        var successMessage = document.getElementById("successMessage");
+        
+        // Set the innerHTML of the div with the success message
+        successMessage.innerHTML = messageFromServer;
+    }
+
+    // Call the function when the page loads
+    window.onload = function () {
+        var messageFromServer = "<h3 style='color:green'>Deposit was successful";
+        displaySuccessMessage(messageFromServer);
+    };
+</script>    
+<button class="btn-login" name="submitInput">Back</button>  
+</form> 
+    <p>Please help us with your feedback</p>
+    <div class="glowing-checkmark">&#10004;</div>
+    <div class="stars">
+        <span class="star" onclick="rate(1)">&#9733;</span>
+        <span class="star" onclick="rate(2)">&#9733;</span>
+        <span class="star" onclick="rate(3)">&#9733;</span>
+        <span class="star" onclick="rate(4)">&#9733;</span>
+        <span class="star" onclick="rate(5)">&#9733;</span>
+    </div> <br> 
+    
+</body>
+</html>
